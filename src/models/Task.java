@@ -15,18 +15,18 @@ import javax.persistence.Table;
 @NamedQueries({
 	@NamedQuery(
 		name = "getAllTasks",
-		query = "SELECT m FROM Message AS m ORDER BY m.id DESC"
+		query = "SELECT m FROM Task AS m ORDER BY m.id DESC"
 	)
 })
 @Table(name = "tasks")
-public class Message {
+public class Task {
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
 	@Column(name = "content", length = 255, nullable = false)
-	private String content;
+    private String content;
 
 	@Column(name = "created_at", nullable = false)
 	private Timestamp created_at;
